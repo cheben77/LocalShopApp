@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>
+      Géo Game Maps
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addMarker()">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="map_canvas"></div>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="success" (click)="mapOptions()">
+      <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-item [routerLink]="['/routePath']" routerLinkActive="router-link-active" >
+    <ion-icon></ion-icon>
+    <ion-label>Acceuil</ion-label>
+  </ion-item>
+</ion-content>

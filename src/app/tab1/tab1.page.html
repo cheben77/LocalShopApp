@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Connexion Firebase par e-mail
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div *ngIf="!connected">
+    <!-- À afficher si l'utilisateur n'est pas connecté -->
+    <ion-item>
+      <ion-label><b></b></ion-label>
+      <ion-input type="email" [(ngModel)]="dataUser.email" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+    </ion-item>
+
+   <!-- <ion-button expand="block" color="primary" (click)="add()">valider</ion-button>-->
+
+    <ion-button shape="round" (click)="facebookLogin()">
+      <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      Connexion avec Facebook
+    </ion-button>
+
+    <ion-button expand="block" color="primary" (click)="login()">Connexion</ion-button>
+    <br>
+
+    <ion-button expand="block" color="tertiary" (click)="signUp()">Inscription</ion-button>
+  </div>
+
+  <div *ngIf="connected">
+    <!-- À afficher si l'utilisateur est bien connecté -->
+    <ion-item>
+      <ion-label>
+        <p>Méthode de connexion</p>
+        <h2><b>email & {{ method }}</b></h2>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>
+        <p>Identifiant</p>
+        <h2><b>{{ userId }}</b></h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <p>Adresse email</p>
+        <h2><b>{{ mail }}</b></h2>
+      </ion-label>
+    </ion-item>
+    <ion-button color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
+    <br>
+    <ion-button color="tertiary" expand="block" shape="round">Inscription</ion-button>
+
+    <ion-item lines="none">
+      <ion-label color="light" text-center>Ou connectez-vous avec</ion-label>
+    </ion-item>
+    
+    <div class="flex">
+      <ion-button color="facebook" shape="round">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Facebook
+      </ion-button>
+      <ion-button color="google" color="youtube" shape="round">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Google
+      </ion-button>
+    <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
+  </div>
+</div>
+</ion-content>

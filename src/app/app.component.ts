@@ -20,7 +20,8 @@ export class AppComponent {
     private statusBar: StatusBar
   ) {
     this.afAuth.authState.subscribe(auth => {
-      console.log('Connecté: ' + auth.uid);
+      auth ?
+      console.log('Connecté: ' + auth.uid) :
       this.router.navigateByUrl('/login');
     });
   }

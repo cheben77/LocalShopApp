@@ -8,11 +8,6 @@ import { initializeApp } from 'firebase';
 import { ToastController } from '@ionic/angular';
 import { async } from 'rxjs/internal/scheduler/async';
 
-const loginData = {
-  email: '',
-  password: ''
-};
-
 
 @Component({
   selector: 'app-login',
@@ -20,14 +15,19 @@ const loginData = {
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginData: any;
+
+  loginData: any = {
+    email: '',
+    password: ''
+  }
+
   constructor(
     public toastController: ToastController,
     public afAuth: AngularFireAuth
   ) { }
-  
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   login() {
